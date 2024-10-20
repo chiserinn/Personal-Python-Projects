@@ -27,3 +27,7 @@ Tips:
 - take projects from online courses
 - take simple projects that are scalable later on
 - do not copy from stack overflow, try first, look if you can't solve, understand, and try to fix it
+
+What to do Next:
+- attempt jobs that push you to code
+- join communities
