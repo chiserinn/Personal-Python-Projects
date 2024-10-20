@@ -18,6 +18,8 @@ List of Topics not Covered Yet:
    -queues
    -heaps
    -trees
+   -hashmaps
+   -arrays
    -graphs
 - APIs
 - other python modules + methods
