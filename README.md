@@ -1,16 +1,16 @@
 Here is a list of a bunch of tiny beginner coding projects I went through while learning python.
 
-List of Topics Covered:
-- Object oriented Programming
-- Dictionary
-- Lists
-
-List of Topics I've Made Practice Projects For:
+List of Topics I've Covered & Made Practice Projects For:
 - Variables
 - Data Types
 - Loops
 - Functions
 - If Statements
+
+List of Topics Covered:
+- Object oriented Programming
+- Dictionary
+- Lists
 
 List of Topics not Covered Yet:
 - Algorithms and Data Structures
