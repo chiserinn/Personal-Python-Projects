@@ -1,4 +1,4 @@
-Here is a list of a bunch of tiny beginner coding projects I went through while learning python.
+Here is a list of a bunch of tiny beginner coding projects I went through while learning python. Additionally some other topics I'm planning to learn and cover.
 
 List of Topics I've Covered & Made Practice Projects For:
 - Variables
@@ -14,17 +14,24 @@ List of Topics Covered:
 
 List of Topics not Covered Yet:
 - Algorithms and Data Structures
+   -hashmaps
+   -arrays
    -linked lists
    -queues
    -heaps
    -trees
-   -hashmaps
-   -arrays
    -graphs
 - APIs
 - other python modules + methods
+- bash scripting
+- CRUD apps (full stack) -> hackathons
+- recursive algorithms
+- production level code
+- terminal (bash subsystem linux) + package managers
+- git
 
 Tips:
+- 
 - do something interesting/useful
 - take projects from online courses
 - take simple projects that are scalable later on
@@ -33,3 +40,5 @@ Tips:
 What to do Next:
 - attempt jobs that push you to code
 - join communities
+- leetcode
+- hackathons
