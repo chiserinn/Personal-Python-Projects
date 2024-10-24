@@ -1,26 +1,27 @@
 
-import pygame
-import time
-import random
+import pygame,time,random,sys
+from pygame.math import Vector2
+
 
 #libraries
 snake_speed = 15
 
-window_x = 720
-window_y = 480
 
 black = pygame.Color(0,0,0)
 blue = pygame.Color(0,0,255)
 white = pygame.Color(255,255,255)
 red = pygame.Color(0,255,0)
-green = pygame.Color(0,255,0)
+green = pygame.Color(100,255,0)
+
+cell_size = 30
+number_of_cells = 25
 
 #initialisation
 pygame.init()
 
 #initialise game window
-pygame.display.set_caption('Snakes')
-game_window = pygame.display.set_mode((window_x, window_y))
+pygame.display.set_caption('Snake!')
+game_window = pygame.display.set_mode((cell_size*number_of_cells, cell_size*number_of_cells))
 
 #fps
 fps = pygame.time.Clock()
@@ -31,7 +32,7 @@ snake_position = [100,50]
 snake_body = [ [100,50], [90,50], [80,50], [70,50]]
 
 #fruit
-fruit_position = [random.randrange(1, (window_x//10)) * 10, random.randrange(1,(window_y)//10)*10]
+fruit_position = [random.randrange(1, (cell_size*number_of_cells//10)) * 10, random.randrange(1,(cell_size*number_of_cells)//10)*10]
 
 fruit_spawn = True
 
@@ -60,7 +61,7 @@ def game_over():
     game_over_rect = game_over_surface.get_rect()
 
     #set position 
-    game_over_rect.midtop = (window_x/2, window_y/4)
+    game_over_rect.midtop = (cell_size*number_of_cells/2, cell_size*number_of_cells/4)
 
     game_window.blit(game_over_surface, game_over_rect)
     #screen.blit(set surface, update method)
@@ -69,7 +70,21 @@ def game_over():
     pygame.quit()
     quit()
 
+class Food:
+    def __init__(self):
+        self.position = Vector2(5,6)
+        
+    
+    def draw(self):
+        #Display surface -> setting blank canvas only one
+        #Surface -> many surfaces, output canvas
+        #Rects -> manipulation of surface, positioning, collision detection, render(draw)
+        food_rect = pygame.Rect(self.position.x * cell_size, self.position.y*cell_size,cell_size,cell_size)
+        pygame.draw.rect(game_window, white, food_rect)
+        
+food = Food()
 
+#game loop
 while True:
 
     for event in pygame.event.get():
@@ -82,7 +97,12 @@ while True:
                 change_to = 'LEFT'
             if event.key == pygame.K_RIGHT:
                 change_to = 'RIGHT'
+
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
     
+    #keys
     if change_to == 'UP' and direction !='DOWN':
         direction = 'UP'
     if change_to == 'DOWN' and direction !='UP':
@@ -92,8 +112,21 @@ while True:
     if change_to == 'RIGHT' and direction !='LEFT':
         direction = 'RIGHT'    
 
+    
+    game_window.fill(green)
+    food.draw()
 
-    if direction == 'UP'    
+    pygame.display.update()
+    fps.tick(60)
+        
+
+#snake steps
+#food class
+#snake class
+
+
+
+
 ###########################################################################################################################
 
 #Object Oriented Programming Notes
