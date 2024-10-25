@@ -31,8 +31,6 @@ snake_position = [100,50]
 
 snake_body = [ [100,50], [90,50], [80,50], [70,50]]
 
-#fruit
-fruit_position = [random.randrange(1, (cell_size*number_of_cells//10)) * 10, random.randrange(1,(cell_size*number_of_cells)//10)*10]
 
 fruit_spawn = True
 
@@ -72,7 +70,7 @@ def game_over():
 
 class Food:
     def __init__(self):
-        self.position = Vector2(5,6)
+        self.position = self.generate_random_pos()
         
     
     def draw(self):
@@ -80,9 +78,29 @@ class Food:
         #Surface -> many surfaces, output canvas
         #Rects -> manipulation of surface, positioning, collision detection, render(draw)
         food_rect = pygame.Rect(self.position.x * cell_size, self.position.y*cell_size,cell_size,cell_size)
-        pygame.draw.rect(game_window, white, food_rect)
+        game_window.blit(food_surface, food_rect)
+        #pygame.draw.rect(game_window, white, food_rect)
+
+    def generate_random_pos(self):
+        x = random.randint(0, number_of_cells - 1)
+        y = random.randint(0, number_of_cells - 1)
+        position = Vector2(x,y)
+        return position
         
+class Snake:
+    def __init__(self):
+        self.body = [Vector2(6,9), Vector2(5,9), Vector2(4,9)]
+    
+    def draw(self):
+        for segment in self.body:
+            segment_rect = (segment.x * cell_size, segment.y * cell_size, cell_size, cell_size)
+            pygame.draw.rect(game_window, blue, segment_rect, 0, 7)
+
+    
+
 food = Food()
+food_surface = pygame.image.load("ree-vector-red-apple-png_1020x.jpg")
+snake = Snake()
 
 #game loop
 while True:
@@ -93,7 +111,7 @@ while True:
                 change_to = 'UP'
             if event.key == pygame.K_DOWN:
                 change_to = 'UPDOWN'   
-            if event.key == pygame.LEFT:
+            if event.key == pygame.K_LEFT:
                 change_to = 'LEFT'
             if event.key == pygame.K_RIGHT:
                 change_to = 'RIGHT'
@@ -115,6 +133,7 @@ while True:
     
     game_window.fill(green)
     food.draw()
+    snake.draw()
 
     pygame.display.update()
     fps.tick(60)
