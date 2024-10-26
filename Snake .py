@@ -90,47 +90,53 @@ class Food:
 class Snake:
     def __init__(self):
         self.body = [Vector2(6,9), Vector2(5,9), Vector2(4,9)]
+        self.direction = Vector2(1,0)
     
     def draw(self):
         for segment in self.body:
             segment_rect = (segment.x * cell_size, segment.y * cell_size, cell_size, cell_size)
             pygame.draw.rect(game_window, blue, segment_rect, 0, 7)
 
-    
+    def update(self):
+        self.body = self.body[:-1]
+        self.body.insert(0,self.body[0] + self.direction)
 
 food = Food()
 food_surface = pygame.image.load("ree-vector-red-apple-png_1020x.jpg")
 snake = Snake()
 
+
+SNAKE_UPDATE = pygame.USEREVENT
+
+pygame.time.set_timer(SNAKE_UPDATE, 200)
+
 #game loop
 while True:
 
     for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
-                change_to = 'UP'
-            if event.key == pygame.K_DOWN:
-                change_to = 'UPDOWN'   
-            if event.key == pygame.K_LEFT:
-                change_to = 'LEFT'
-            if event.key == pygame.K_RIGHT:
-                change_to = 'RIGHT'
-
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+        if event.type  == SNAKE_UPDATE:
+            snake.update()
     
-    #keys
-    if change_to == 'UP' and direction !='DOWN':
-        direction = 'UP'
-    if change_to == 'DOWN' and direction !='UP':
-        direction = 'DOWN'
-    if change_to == 'LEFT' and direction !='RIGHT':
-        direction = 'LEFT'
-    if change_to == 'RIGHT' and direction !='LEFT':
-        direction = 'RIGHT'    
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_UP and snake.direction != (0,1):
+            change_to = 'UP'
+            snake.direction = Vector2(0, -1)
+        if event.key == pygame.K_DOWN and snake.direction != (0,-1):
+            change_to = 'DOWN'
+            snake.direction = Vector2(0, 1)
+        if event.key == pygame.K_LEFT and snake.direction != (1,0):
+            change_to = 'LEFT'
+            snake.direction = Vector2(-1, 0)
+        if event.key == pygame.K_RIGHT and snake.direction != (-1,0):
+            change_to = 'RIGHT'
+            snake.direction = Vector2(1, 0)
 
+    if event.type == pygame.QUIT:
+        pygame.quit()
+        sys.exit()
     
+
+
     game_window.fill(green)
     food.draw()
     snake.draw()
