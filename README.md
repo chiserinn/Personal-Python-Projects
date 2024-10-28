@@ -11,6 +11,9 @@ List of Topics Covered:
 - Object oriented Programming
 - Dictionary
 - Lists
+- terminal (bash subsystem linux)
+- git
+
 
 List of Topics not Covered Yet:
 - Algorithms and Data Structures
@@ -27,8 +30,7 @@ List of Topics not Covered Yet:
 - CRUD apps (full stack) -> hackathons
 - recursive algorithms
 - production level code
-- terminal (bash subsystem linux) + package managers
-- git
+- package managers
 
 Tips:
 - 
