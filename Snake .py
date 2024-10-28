@@ -35,8 +35,6 @@ snake_body = [ [100,50], [90,50], [80,50], [70,50]]
 fruit_spawn = True
 
 #default orientation
-direction = 'RIGHT'
-change_to = direction
 
 #score
 score = 0
@@ -119,16 +117,12 @@ while True:
     
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_UP and snake.direction != (0,1):
-            change_to = 'UP'
             snake.direction = Vector2(0, -1)
         if event.key == pygame.K_DOWN and snake.direction != (0,-1):
-            change_to = 'DOWN'
             snake.direction = Vector2(0, 1)
         if event.key == pygame.K_LEFT and snake.direction != (1,0):
-            change_to = 'LEFT'
             snake.direction = Vector2(-1, 0)
         if event.key == pygame.K_RIGHT and snake.direction != (-1,0):
-            change_to = 'RIGHT'
             snake.direction = Vector2(1, 0)
 
     if event.type == pygame.QUIT:
