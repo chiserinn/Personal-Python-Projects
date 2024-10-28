@@ -5,7 +5,24 @@ high_beginner_projects_set = {'qr code encoder/decoder': 'python modules' , 'bin
 
 #asking for input based on my requirements
 
+class Main():
+    ask = Ask()
 
+
+class Current:
+
+    def __init__ (self, beginner_project_input):
+        self.current = {}
+        self.beginner_proj = beginner_project_input()
+
+    def Ask(self):
+        set_input = input("Which set would you like to take from? B or H?")
+        if set_input == "B":
+            set_input_pop = input("Which entry would you like to pop? ")
+            self.beginner_proj.pop()
+
+    
+    
 
 def listing_beginner_projects():
     i=0
@@ -30,5 +47,4 @@ def listing_intermediate_projects():
         print("Tested topic: {}".format(value))
     print("\n")
 
-listing_beginner_projects()
-listing_intermediate_projects()
+main = Main(beginner_projects_set, high_beginner_projects_set)
