@@ -41,16 +41,8 @@ score = 0
 
 
 #display
-def show_score(choice,color,font,size):
-    #set font
-    score_font = pygame.font.SysFont(font,size)
-    #creating text surface
-    score_surface = score_font.render('Score: ' + str(score), True, color)
-    #continuously update text surface
-    score_rect = score_surface.get_rect()
-    #display
-    game_window.blit(score_surface, score_rect)
-
+title_font = pygame.font.Font(None,60)
+   
 #game over
 def game_over():
     my_font = pygame.font.SysFont('times new roman', 50)
@@ -76,7 +68,7 @@ class Food:
         #Display surface -> setting blank canvas only one
         #Surface -> many surfaces, output canvas
         #Rects -> manipulation of surface, positioning, collision detection, render(draw)
-        food_rect = pygame.Rect(self.position.x * cell_size, self.position.y*cell_size,cell_size,cell_size)
+        food_rect = pygame.Rect(offset + self.position.x * cell_size, offset + self.position.y*cell_size,cell_size,cell_size)
         game_window.blit(food_surface, food_rect)
         #pygame.draw.rect(game_window, white, food_rect)
     
@@ -101,7 +93,7 @@ class Snake:
     
     def draw(self):
         for segment in self.body:
-            segment_rect = (segment.x * cell_size, segment.y * cell_size, cell_size, cell_size)
+            segment_rect = (offset + segment.x * cell_size, offset + segment.y * cell_size, cell_size, cell_size)
             pygame.draw.rect(game_window, blue, segment_rect, 0, 7)
 
     def update(self):
@@ -191,6 +183,8 @@ while True:
     game_window.fill(green)
     pygame.draw.rect(game_window, black, (offset-5, offset-5, cell_size * number_of_cells +10,cell_size * number_of_cells +10), 5)
     game.draw()
+    title_surface = title_font.render("Retro Snake", True, black)
+    game_window.blit(title_surface, (offset - 5, 20))
     pygame.display.update()
     fps.tick(60)
         
