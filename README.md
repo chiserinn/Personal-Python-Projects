@@ -6,9 +6,10 @@ List of Topics I've Covered & Made Practice Projects For:
 - Loops
 - Functions
 - If Statements
+- Object oriented Programming
+
 
 List of Topics Covered:
-- Object oriented Programming
 - Dictionary
 - Lists
 - terminal (bash subsystem linux)
