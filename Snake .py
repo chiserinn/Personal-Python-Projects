@@ -13,8 +13,8 @@ white = pygame.Color(255,255,255)
 red = pygame.Color(0,255,0)
 green = pygame.Color(100,255,0)
 
-cell_size = 30
-number_of_cells = 25
+cell_size = 28
+number_of_cells = 23
 offset = 70
 
 #initialisation
@@ -42,6 +42,8 @@ score = 0
 
 #display
 title_font = pygame.font.Font(None,60)
+score_font = pygame.font.Font(None,60)
+
    
 #game over
 def game_over():
@@ -113,6 +115,7 @@ class Game:
         self.snake = Snake()
         self.food = Food(self.snake.body)
         self.state = "RUNNING"
+        self.score = 0
 
     def draw(self):
         self.food.draw()
@@ -130,6 +133,7 @@ class Game:
         if self.snake.body[0] == self.food.position:
             self.food.position = self.food.generate_random_pos(self.snake.body)
             self.snake.add_segment = True
+            self.score +=1
         
     def check_collision_with_edges(self):
         if self.snake.body[0].x == number_of_cells or self.snake.body[0].x == -1:
@@ -141,6 +145,7 @@ class Game:
         self.snake.reset()
         self.food.position = self.food.generate_random_pos(self.snake.body)
         self.state = "STOPPED"
+        self.score = 0
 
     def check_collision_with_tail(self):
         headless_body = self.snake.body[1:]
@@ -184,7 +189,9 @@ while True:
     pygame.draw.rect(game_window, black, (offset-5, offset-5, cell_size * number_of_cells +10,cell_size * number_of_cells +10), 5)
     game.draw()
     title_surface = title_font.render("Retro Snake", True, black)
+    score_surface = score_font.render(str(game.score), True, black)
     game_window.blit(title_surface, (offset - 5, 20))
+    game_window.blit(score_surface, (offset-5, offset +cell_size*number_of_cells +10))
     pygame.display.update()
     fps.tick(60)
         
