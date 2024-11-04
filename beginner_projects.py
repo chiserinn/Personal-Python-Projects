@@ -1,1 +1,0 @@
-beginner_projects_set = {'countdown timer':' while loops', 'password generator': 'for loops', 'random cooking decisions': 'random', 'tic-tac-toe': 'time,math, recursive decision making algorithm(minimax)', 'Snake!': 'Object Oriented Programming'}
