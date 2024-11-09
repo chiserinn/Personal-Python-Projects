@@ -3,9 +3,7 @@ import json
 
 beginner_projects_set = {'countdown timer':' while loops', 'password generator': 'for loops', 'random cooking decisions': 'random', 'tic-tac-toe': 'time,math, recursive decision making algorithm(minimab_set)', 'Snake!': 'Object Oriented Programming'}
 
-
-
-intermediate_projects_set = {'qr code encoder/decoder': 'python modules' , 'binary_search':'code interview eb_set implementation', 'minesweeper': 'recursion', 'sudoku': 'backtracking, recursion', 'photo manipulation': 'image filters in python', 'markov chain': 'AI', 'pong': 'GUI programming ', 'Connect Four': 'Higher end beginner, numpy, math, pygame, sys', 'Tetris': 'Higher end beginner', 'Web scraping': 'data collection from web pages', 'Bulk file renamer':'pipeline relevance?', 'weather program':'apis', 'discord bot':'discord API, replit IDE'}
+#intermediate_projects_set = {'qr code encoder/decoder': 'python modules' , 'binary_search':'code interview eb_set implementation', 'minesweeper': 'recursion', 'sudoku': 'backtracking, recursion', 'photo manipulation': 'image filters in python', 'markov chain': 'AI', 'pong': 'GUI programming ', 'Connect Four': 'Higher end beginner, numpy, math, pygame, sys', 'Tetris': 'Higher end beginner', 'Web scraping': 'data collection from web pages', 'Bulk file renamer':'pipeline relevance?', 'weather program':'apis', 'discord bot':'discord API, replit IDE'}
 
 #i want to test myself on (value),return key
 #hook json file onto class
@@ -16,8 +14,9 @@ intermediate_projects_set = {'qr code encoder/decoder': 'python modules' , 'bina
 
 class Main:
     
-    def __init__(self):
-        # self.beginner_projects_set = {'countdown timer':' while loops', 'password generator': 'for loops', 'random cooking decisions': 'random', 'tic-tac-toe': 'time,math, recursive decision making algorithm(minimab_set)', 'Snake!': 'Object Oriented Programming'}
+    def __init__(self,beginner_input):
+        self.beginner_project_set = beginner_input
+        print(self.beginner_project_set)
         # self.intermediate_projects_set = {'qr code encoder/decoder': 'python modules' , 'binary_search':'code interview eb_set implementation', 'minesweeper': 'recursion', 'sudoku': 'backtracking, recursion', 'photo manipulation': 'image filters in python', 'markov chain': 'AI', 'pong': 'GUI programming ', 'Connect Four': 'Higher end beginner, numpy, math, pygame, sys', 'Tetris': 'Higher end beginner', 'Web scraping': 'data collection from web pages', 'Bulk file renamer':'pipeline relevance?', 'weather program':'apis', 'discord bot':'discord API, replit IDE'}
         self.set_choice = ""
         self.choice = ""
@@ -26,27 +25,34 @@ class Main:
         
     def update(self):
 
-        if self.set_choice == "b":
-            self.project_set = {'countdown timer':' while loops', 'password generator': 'for loops', 'random cooking decisions': 'random', 'tic-tac-toe': 'time,math, recursive decision making algorithm(minimab_set)', 'Snake!': 'Object Oriented Programming'}
+        set_choice = self.set_choice()
+        choice = self.choice()
+
+        if set_choice == "b":
+            self.project_set = self.beginner_project_set
             print(self.project_set)
-        elif self.set_choice == "i":
-            self.project_set = {'qr code encoder/decoder': 'python modules' , 'binary_search':'code interview eb_set implementation', 'minesweeper': 'recursion', 'sudoku': 'backtracking, recursion', 'photo manipulation': 'image filters in python', 'markov chain': 'AI', 'pong': 'GUI programming ', 'Connect Four': 'Higher end beginner, numpy, math, pygame, sys', 'Tetris': 'Higher end beginner', 'Web scraping': 'data collection from web pages', 'Bulk file renamer':'pipeline relevance?', 'weather program':'apis', 'discord bot':'discord API, replit IDE'}
+        elif set_choice == "i":
+            self.project_set = self.beginner_project_set
             print(self.project_set)
 
 
-        if self.choice == "add":
+        if choice == "add":
             self.add()
-        elif self.choice == "remove":
+        elif choice == "remove":
             self.remove()
         else:
-            self.dict_input()
+            self.set_choice()
+            self.choice()
     
 
-    def dict_input(self):
-        self.set_choice = str(input("Which set? beginner [b] or intermediate [i] ? "))
-        self.choice = str(input("Do you want to add [1] or remove [2]? "))
-        return self.set_choice, self.choice
+    def set_choice(self):
+        b_i_set = str(input("Which set? beginner [b] or intermediate [i] ? "))
+        return b_i_set
 
+
+    def choice(self):
+        add_remove_choice = str(input("Do you want to add [1] or remove [2]? "))
+        return add_remove_choice
 
     def add(self):
         print("adding")
@@ -64,7 +70,7 @@ class Main:
         print(self.project_set)
 
 
-main = Main()
+main = Main(beginner_projects_set)
 main.update()
 
 # set_choice = str(input("Which set? beginner [b] or intermediate [i] ? "))
