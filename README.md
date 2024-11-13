@@ -45,3 +45,11 @@ What to do Next:
 - join communities
 - leetcode
 - hackathons
+
+Online Resources:
+[Python Projects](https://github.com/karan/Projects)
+[List of Python Projects with Source Code and Tutorials](https://www.theinsaneapp.com/2021/06/list-of-python-projects-with-source-code-and-tutorials.html)
+[Codeacademy Python OOP Course [DONE]](https://www.codecademy.com/courses/learn-intermediate-python-3-object-oriented-programming/lessons/int-python-oop/exercises/polymorphism)
+
+Books:
+[Learn Python the Hard Way [READING]](https://github.com/hocchudong/learnpythonthehardway-vn/blob/master/Docs/Learn%20Python%20The%20Hard%20Way,%203rd%20Edition%20.pdf)
