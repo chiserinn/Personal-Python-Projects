@@ -15,7 +15,7 @@ beginner_projects_set = {'countdown timer':' while loops', 'password generator':
 class Main:
     
     def __init__(self,beginner_input):
-        self.beginner_input = beginner
+        self.beginner_input = beginner_input
         # self.intermediate_projects_set = {'qr code encoder/decoder': 'python modules' , 'binary_search':'code interview eb_set implementation', 'minesweeper': 'recursion', 'sudoku': 'backtracking, recursion', 'photo manipulation': 'image filters in python', 'markov chain': 'AI', 'pong': 'GUI programming ', 'Connect Four': 'Higher end beginner, numpy, math, pygame, sys', 'Tetris': 'Higher end beginner', 'Web scraping': 'data collection from web pages', 'Bulk file renamer':'pipeline relevance?', 'weather program':'apis', 'discord bot':'discord API, replit IDE'}
         self.set_choice = ""
         self.choice = ""
@@ -24,7 +24,7 @@ class Main:
         
     def update(self):
 
-        set_choice = self.set_choice()
+        
         choice = self.choice()
 
         if set_choice == "b":
