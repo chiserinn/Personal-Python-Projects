@@ -52,3 +52,5 @@ Debugging Techniques
 1. printf() -> quick way to know what is going in the program, but don't use so much that it just becomes trial and error
 2. debug50 -> debugger - helps with logic errors, not syntax. compile first then run debugger. breakpoint (leftmost side of lines, press dot to pause execution)
 debug50 ./code
+3. rubber duck debugging -> verbalising the issue, and hearing any ill logic in the code. explain to any inanimate object what is going on in the code.
+4. cs50.ai
