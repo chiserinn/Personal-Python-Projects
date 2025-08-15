@@ -7,11 +7,12 @@ List of Topics I've Covered & Made Practice Projects For:
 - Functions
 - If Statements
 - Object oriented Programming
+- recursive algorithms
+- Lists
 
 
 List of Topics Covered:
 - Dictionary
-- Lists
 - terminal (bash subsystem linux)
 - git
 
@@ -29,7 +30,6 @@ List of Topics not Covered Yet:
 - other python modules + methods
 - bash scripting
 - CRUD apps (full stack) -> hackathons
-- recursive algorithms
 - production level code
 - package managers
 
