@@ -20,3 +20,8 @@ class UserInfo:
 userlogin = UserInfo()
 userlogin.ask_input()
 userlogin.check_validity()
+
+#count_down = set([9, 8, 7, 6, 5, 4, 3, 2, 1])
+
+#for num in count_down:
+   #print(num, 'seconds left!') _> use for your validity function
