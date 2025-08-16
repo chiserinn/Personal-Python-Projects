@@ -1,1 +1,10 @@
-ate", "text somebody", "listen to music", "think about animation"]
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
+deli_line.dequeue()
