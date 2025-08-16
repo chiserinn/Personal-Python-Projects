@@ -6,7 +6,6 @@ List of Topics I've Covered & Made Practice Projects For:
 - Loops
 - Functions
 - If Statements
-- Object oriented Programming
 - recursive algorithms
 - Lists
 
