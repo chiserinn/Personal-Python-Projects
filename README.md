@@ -6,26 +6,26 @@ List of Topics I've Covered & Made Practice Projects For:
 - Loops
 - Functions
 - If Statements
-- Object oriented Programming
 - recursive algorithms
 - Lists
 
 
 List of Topics Covered:
+- Queues and Stacks
+- Classes
 - Dictionary
 - terminal (bash subsystem linux)
-- git
+- Arrays
 
 
 List of Topics not Covered Yet:
 - Algorithms and Data Structures
    -hashmaps
-   -arrays
    -linked lists
-   -queues
    -heaps
    -trees
    -graphs
+- git
 - APIs
 - other python modules + methods
 - bash scripting
