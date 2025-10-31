@@ -1,10 +1,1 @@
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
-deli_line.dequeue()
+print
